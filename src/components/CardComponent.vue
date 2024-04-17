@@ -13,8 +13,8 @@
             <p>{{ vote }}</p>
             <img :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${country}.svg`" alt="">
 
-            <div class="vote">
-                <div v-for="n in voteFiveStar "><i class="fa-solid fa-star"></i></div>
+            <div class="vote d-flex justify-content-center align-items-center">
+                <div v-for="n in voteFiveStar"><i class="fa-solid fa-star"></i></div>
             </div>
         </div>
         </div>
@@ -41,7 +41,7 @@ export default {
   width: 200px;
   height: 300px;
   border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; 
 }
 .flip-card-inner {
   position: relative;
@@ -58,7 +58,6 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
 }
 .flip-card-back {
@@ -68,6 +67,7 @@ export default {
 }
 .vote {
     display: flex;
+    text-align: center;
 }
 .flip-card-front img {
     width: 100%;

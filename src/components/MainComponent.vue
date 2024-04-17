@@ -1,10 +1,15 @@
 <template>
+    <div class="gallery">
     <div class="cardGallery container">
+
         <div v-for="(item, index) in store.tvShow" :key="index" class="cardMedia">
-            <CardComponent :title="item.original_name" :titleOriginal="item.name" :title2="item.original_title" :titleOriginal2="item.title" 
-            :vote="item.vote_average" :country="item.origin_country" :img="`http://image.tmdb.org/t/p/w342/${item.poster_path}`"/>
+            <CardComponent :title="item.original_name" :titleOriginal="item.name" :title2="item.original_title"
+                :titleOriginal2="item.title" :vote="item.vote_average" :country="item.origin_country"
+                :img="`http://image.tmdb.org/t/p/w342/${item.poster_path}`" />
         </div>
+
     </div>
+</div>
 </template>
 
 <script>
@@ -37,6 +42,9 @@ export default {
     gap: 10px;
     flex-wrap: wrap;
     height: calc(100vh - 50px);
+    
+}
+.gallery {
     overflow-y: auto;
 }
 </style>
