@@ -25,11 +25,13 @@ export default {
 .cardMedia {
     background-color: rgb(204, 34, 34);
     width: 200px;
+    height: 300px;
     display: flex;
 
 }
 
 .cardGallery {
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     gap: 10px;

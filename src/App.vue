@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>hello Vue</h1>
+    <h1>Rotten tomatoes</h1>
     <HeaderComponent  @findMedia="getMedia()"/>
     <MainComponent/>
   </div>
