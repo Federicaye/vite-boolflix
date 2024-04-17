@@ -14,7 +14,7 @@ export const store = reactive({
             
         }
     },
-    endPoint: '',
+    endPoint: 'search/tv',
     tvShow: [],
     movies: [],
     allMedia: []

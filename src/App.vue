@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>hello Vue</h1>
-    <HeaderComponent/>
+    <HeaderComponent  @findMedia="getMedia()"/>
     <MainComponent/>
   </div>
 </template>
@@ -23,6 +23,12 @@ export default {
     MainComponent
   },
   methods: {
+    getMedia() {
+      axios.get(this.store.apiUrl + this.store.endPoint, this.store.options).then((res) => {
+        this.store.tvShow = res.data.results;
+        console.log(this.store.tvShow);
+      })
+    },
     getTv() {
       axios.get(this.store.apiUrl + this.store.endPoints.tv, this.store.options).then((res) => {
         this.store.tvShow = res.data.results;
@@ -44,11 +50,11 @@ export default {
   },
 
   mounted() {
+    this.getMedia(); 
     console.log('ciao');
   },
   created() {
-   this.getTv(); 
-    console.log('ciao')
+   console.log('ciao')
   }
 }
 
