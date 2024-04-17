@@ -1,6 +1,8 @@
 <template>
-    <div v-for="(item, index) in tvShow" :key="index">
-        <CardComponent :title="item.original_name" :titleOriginal="item.name"/>
+    <div class="cardGallery">
+        <div v-for="(item, index) in store.tvShow" :key="index" class="cardMedia">
+            <CardComponent :title="item.original_name" :titleOriginal="item.name" />
+        </div>
     </div>
 </template>
 
@@ -10,12 +12,27 @@ import { store } from '../store.js';
 export default {
     name: 'MainComponent',
     components: { CardComponent },
-    data(){
-        return{
-        store,
+    data() {
+        return {
+            store,
+
         }
     }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cardMedia {
+    background-color: rgb(204, 34, 34);
+    width: 200px;
+    display: flex;
+
+}
+
+.cardGallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+</style>

@@ -37,7 +37,7 @@ export default {
     },
     getMovieTvShow(){
       axios.get(this.store.apiUrlMulti, this.store.options).then((res) => {
-        this.store.movies = res.data.results;
+        this.store.allMedia = res.data.results;
         console.log(this.store.allMedia);
       })
     }
