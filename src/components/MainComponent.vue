@@ -31,10 +31,12 @@ export default {
 }
 
 .cardGallery {
-    padding-top: 30px;
+    padding-top: 50px;
     display: flex;
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
+    height: calc(100vh - 50px);
+    overflow-y: auto;
 }
 </style>
