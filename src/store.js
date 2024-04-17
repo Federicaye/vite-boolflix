@@ -4,14 +4,17 @@ export const store = reactive({
     apiUrlMulti: 'https://api.themoviedb.org/3/search/multi',
     endPoints: {
         movie: 'search/movie',
-        tv: 'search/tv'
+        tv: 'search/tv',
+        all: 'search/multi'
     },
     options: {
         params: {
-            query: 's',
+            query: 'ritorno',
             api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
             
         }
     },
-    tvShow: []
+    endPoint: '',
+    tvShow: [],
+    movies: []
 })

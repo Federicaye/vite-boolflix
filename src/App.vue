@@ -25,6 +25,18 @@ export default {
         this.store.tvShow = res.data.results;
         console.log(this.store.tvShow);
       })
+    },
+    getMovie(){
+      axios.get(this.store.apiUrl + this.store.endPoints.movie, this.store.options).then((res) => {
+        this.store.movies = res.data.results;
+        console.log(this.store.movies);
+      })
+    },
+    getMovieTvShow(){
+      axios.get(this.store.apiUrlMulti, this.store.options).then((res) => {
+        this.store.movies = res.data.results;
+        console.log(this.store.movies);
+      })
     }
   },
 
