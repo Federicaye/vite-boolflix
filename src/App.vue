@@ -16,15 +16,15 @@ import axios from 'axios';
     },
     methods: {
       getTv(){
-        axios.get(this.store.endPoints.apiUrl + this.store.endPoints.movie, {params: this.store.options.params }).then((res) => 
-      this.store.tvShow = res.data);
+        axios.get(this.store.apiUrl + this.store.endPoints.tv,  this.store.options ).then((res) => {
+      this.store.tvShow = res.data.results;
       console.log(this.store.tvShow)
-      }
+      })
     },
     created(){
       this.getTv()
     }
-  }
+  }}
 </script>
 
 <style lang="scss" scoped>
