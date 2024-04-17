@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>hello Vue</h1>
-    <HeaderComponent />
+    <HeaderComponent/>
+    <MainComponent/>
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 import { store } from './store.js';
 import axios from 'axios';
 import HeaderComponent from './components/HeaderComponent.vue';
+import MainComponent from './components/MainComponent.vue';
 export default {
   name: 'App',
   data() {
@@ -18,6 +20,7 @@ export default {
   },
   components: {
     HeaderComponent,
+    MainComponent
   },
   methods: {
     getTv() {
@@ -35,7 +38,7 @@ export default {
     getMovieTvShow(){
       axios.get(this.store.apiUrlMulti, this.store.options).then((res) => {
         this.store.movies = res.data.results;
-        console.log(this.store.movies);
+        console.log(this.store.allMedia);
       })
     }
   },
@@ -44,7 +47,7 @@ export default {
     console.log('ciao');
   },
   created() {
-    this.getTv();
+   this.getTv(); 
     console.log('ciao')
   }
 }

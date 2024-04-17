@@ -1,7 +1,20 @@
 <template>
-    <div>
-perchè non funzionano i console.log
-    </div>
+   <input v-model="endPoint" 
+           type="radio" 
+           value="search/movie" 
+           name="category" /> 
+    <label for="">Movies</label> 
+    <input v-model="endPoint" 
+           type="radio" 
+           value="search/tv" 
+           name="category" /> 
+    <label for="">Tv show</label> 
+    <input v-model="endPoint"
+             type="radio"
+             value="search/multi"
+             name="category" /> 
+    <label for="">All</label> 
+    <button>search</button>
 </template>
 
 <script>
