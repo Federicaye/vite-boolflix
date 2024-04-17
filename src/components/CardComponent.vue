@@ -61,7 +61,7 @@ export default {
   backface-visibility: hidden;
 }
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: rgb(72, 100, 128);
   color: white;
   transform: rotateY(180deg);
 }

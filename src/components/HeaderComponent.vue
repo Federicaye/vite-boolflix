@@ -34,13 +34,14 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    background-color: aqua;
+    background-color: rgb(72, 100, 128);
     position: fixed;
     width: 100%;
     top: 0;
     right: 0;
     z-index: 2000;
     height: 50px;
+    color: white;
 }
 
 .filter {

@@ -29,14 +29,14 @@ export default {
 
 <style lang="scss" scoped>
 .cardMedia {
-    padding: 10px;
+ 
     color: white;
     display: flex;
 
 }
 
 .cardGallery {
-    padding-top: 50px;
+    padding-top: 80px;
     display: flex;
     justify-content: space-between;
     gap: 10px;
