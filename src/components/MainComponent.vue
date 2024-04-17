@@ -1,7 +1,7 @@
 <template>
     <div class="cardGallery container">
         <div v-for="(item, index) in store.tvShow" :key="index" class="cardMedia">
-            <CardComponent :title="item.original_name" :titleOriginal="item.name" />
+            <CardComponent :title="item.original_name" :titleOriginal="item.name" :title2="item.original_title" :titleOriginal2="item.title" />
         </div>
     </div>
 </template>

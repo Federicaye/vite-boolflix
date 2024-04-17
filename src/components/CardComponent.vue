@@ -3,6 +3,8 @@
     <div>
         <p>{{ title }}</p>
         <p>{{ titleOriginal }}</p>
+        <p>{{ title2 }}</p>
+        <p>{{ titleOriginal2 }}</p>
     </div>
 
 </template>
@@ -10,7 +12,7 @@
 <script>
 export default {
     name: 'CardComponent',
-    props: ['title', 'titleOriginal']
+    props: ['title', 'titleOriginal', 'title2', 'titleOriginal2']
 }
 </script>
 

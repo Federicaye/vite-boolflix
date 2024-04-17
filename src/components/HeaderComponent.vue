@@ -1,7 +1,7 @@
 <template>
    <input v-model="store.endPoint" 
            type="radio" 
-           value="search/movie" checked
+           value="search/movie"
            name="category" /> 
     <label for="">Movies</label> 
     <input v-model="store.endPoint" 

@@ -9,12 +9,12 @@ export const store = reactive({
     },
     options: {
         params: {
-            query: 'ritorno',
+            query: '',
             api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
             
         }
     },
-    endPoint: 'search/tv',
+    endPoint: '',
     tvShow: [],
     movies: [],
     allMedia: []
