@@ -11,7 +11,6 @@ export const store = reactive({
             query: 's',
             api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
             
-
         }
     },
     tvShow: []
