@@ -1,7 +1,8 @@
 <template>
     <div class="cardGallery container">
         <div v-for="(item, index) in store.tvShow" :key="index" class="cardMedia">
-            <CardComponent :title="item.original_name" :titleOriginal="item.name" :title2="item.original_title" :titleOriginal2="item.title" />
+            <CardComponent :title="item.original_name" :titleOriginal="item.name" :title2="item.original_title" :titleOriginal2="item.title" 
+            :vote="item.vote_average" :country="item.origin_country" :img="`http://image.tmdb.org/t/p/w342/${item.poster_path}`"/>
         </div>
     </div>
 </template>
@@ -23,9 +24,8 @@ export default {
 
 <style lang="scss" scoped>
 .cardMedia {
-    background-color: rgb(204, 34, 34);
-    width: 200px;
-    height: 300px;
+    padding: 10px;
+    color: white;
     display: flex;
 
 }
