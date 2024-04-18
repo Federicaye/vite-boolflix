@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .myCol {
     width: 300px;
-    flex-shrink: 0;
+    flex-shrink: 0; 
     overflow-x: auto;
 }
 </style>

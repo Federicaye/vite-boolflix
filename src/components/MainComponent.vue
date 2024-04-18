@@ -1,10 +1,11 @@
 <template>
     <div class="gallery">
         <div class="cardGallery container">
-            <cardListOrizontal title="Movie by genre" :list="store.genre" />
+            <cardListOrizontal :title="store.optionsFilter.params.with_genres" :list="store.genre" />
+            
+            <CardList :title="`risultati della ricerca per ${store.options.params.query}`" :list="store.findMedia" />
             <cardListOrizontal title="Action" :list="store.genreAction" />
             <cardListOrizontal title="Action" :list="store.filmByGenre[1]" />
-            <CardList title="risultati della ricerca" :list="store.findMedia" />
 
         </div>
     </div>
