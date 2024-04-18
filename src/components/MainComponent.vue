@@ -1,7 +1,8 @@
 <template>
     <div class="gallery">
         <div class="cardGallery container">
-            <cardListOrizontal title="Action" :list="store.genre" />
+            <cardListOrizontal title="Movie by genre" :list="store.genre" />
+            <cardListOrizontal title="Action" :list="store.genreAction" />
             <cardListOrizontal title="Action" :list="store.filmByGenre[1]" />
             <CardList title="risultati della ricerca" :list="store.findMedia" />
 

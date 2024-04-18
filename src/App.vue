@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderComponent @findMedia="getMedia()" />
+    <HeaderComponent @findMedia="getMedia()"  @findMediaByGenre="getMediaFilteredByGenre()"/>
     <MainComponent />
   </div>
 </template>
@@ -59,31 +59,19 @@ export default {
       axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, {
         params: {
           api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
-          with_genres: this.store.genreId[0],
+          with_genres: 28,
         }
       }).then((res) => {
-        this.store.genre = res.data.results;
+        this.store.genreAction = res.data.results;
 
       })
     },
 
-    /* METODO PER PRENDERE ARRAY DEI GENERI DI FILM  */
-
-    getAllGenre() {
-      this.store.genreId.forEach((gId) => {
-        axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, {
-          params: {
-            with_genres: gId,
-            api_key: '21799a6b0925c3f753aa0f6bbb689d8c'
-          }
-        }).then((res) => this.store.filmByGenre[gId] = res.data.results)
-      })
-    }
   },
 
+
   mounted() {
-   /*  this.getMediaByGenre(); */
-    this.getAllGenre()
+    this.getMediaByGenre();
   },
   created() {
 

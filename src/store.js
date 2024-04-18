@@ -18,15 +18,16 @@ export const store = reactive({
     },
     optionsFilter: {
         params: {
-            with_genres: 28,
+            with_genres: '',
             api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
         }
     },
     endPoint: '',
     tvShow: [],
     movies: [],
+    genreAction: [],
     genre: [],
     genreId: [28, 12, 80, 27, 53], /* OGNI NUMERO CORRISPONDE A UN GENERE */
-    filmByGenre: {}, /* OGEETTO CHE RACCOGLIE GLI ARRAY */
+    filmByGenre: [], /* ARRAY CHE RACCOGLIE GLI ARRAY */
     findMedia: [] /* RICERCA DELL'UTENTE */
 })
