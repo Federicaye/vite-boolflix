@@ -2,20 +2,18 @@
 
     <div class="flip-card">
         <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img :src="img" alt="">
+            <div class="flip-card-front"> <!-- devi scrivere tutte le proprietà di item -->
+                <img :src="`http://image.tmdb.org/t/p/w342/${item.poster_path}`" alt="">
             </div>
             <div class="flip-card-back">
-            <p v-if="title">{{ title }}</p>
-            <p v-if="titleOriginal">{{ titleOriginal }}</p>
-            <p v-if="title2">{{ title2 }}</p>
-            <p v-if="titleOriginal2">{{ titleOriginal2 }}</p>
-            <p>{{ vote }}</p>
-            <img :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${country}.svg`" alt="">
+            <p>{{ item.title || item.name }}</p>
+            <p>{{ item.original_title || item.original_name }}</p>
+            <p>{{ item.vote_average }}</p>
+            <img :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${item.origin_country}.svg`" alt="">
 
-            <div class="vote d-flex justify-content-center align-items-center">
+           <div class="vote d-flex justify-content-center align-items-center">
                 <div v-for="n in voteFiveStar"><i class="fa-solid fa-star"></i></div>
-            </div>
+            </div> 
         </div>
         </div>
     </div>
@@ -25,12 +23,14 @@
 <script>
 export default {
     name: 'CardComponent',
-    props: ['title', 'titleOriginal', 'title2', 'titleOriginal2', 'vote', 'language', 'country', 'img'],
+    props: {
+        item: Object
+    },
     computed: {
         voteFiveStar() {
-            return Math.round(this.vote / 2);
+            return Math.round(this.item.vote_average / 2);
         }
-    }
+    } 
 }
 </script>
 
