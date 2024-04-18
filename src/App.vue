@@ -1,7 +1,7 @@
 <template>
   <div>
-    <HeaderComponent  @findMedia="getMedia()"/>
-    <MainComponent/>
+    <HeaderComponent @findMedia="getMedia()" />
+    <MainComponent />
   </div>
 </template>
 
@@ -23,12 +23,13 @@ export default {
   },
   methods: {
     /* RICERCA DELL'UTENTE */
-    getMedia() { 
-      if(this.store.options.params.query){
-      axios.get(this.store.apiUrl + this.store.endPoint, this.store.options).then((res) => {
-        this.store.findMedia = res.data.results;
-        console.log(this.store.tvShow);
-      })}
+    getMedia() {
+      if (this.store.options.params.query) {
+        axios.get(this.store.apiUrl + this.store.endPoint, this.store.options).then((res) => {
+          this.store.findMedia = res.data.results;
+          console.log(this.store.tvShow);
+        })
+      }
     },
     getTv() {
       axios.get(this.store.apiUrl + this.store.endPoints.tv, this.store.options).then((res) => {
@@ -36,31 +37,40 @@ export default {
         console.log(this.store.tvShow);
       })
     },
-    getMovie(){
+    getMovie() {
       axios.get(this.store.apiUrl + this.store.endPoints.movie, this.store.options).then((res) => {
         this.store.movies = res.data.results;
         console.log(this.store.movies);
       })
     },
-    getMovieTvShow(){
+    getMovieTvShow() {
       axios.get(this.store.apiUrlMulti, this.store.options).then((res) => {
         this.store.allMedia = res.data.results;
         console.log(this.store.allMedia);
       })
     },
-    getMediaByGenre(){
+    getMediaFilteredByGenre() {
       axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, this.store.optionsFilter).then((res) => {
         this.store.genre = res.data.results;
-        console.log(this.store.allMedia);
+
       })
-    }
+    },
+    getMediaByGenre() {
+      axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, {params: {
+        api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
+        with_genres: this.store.genreId[0],
+      }}).then((res) => {
+        this.store.genre = res.data.results;
+
+      })
+    },
   },
 
   mounted() {
     this.getMediaByGenre();
   },
   created() {
-   
+
   }
 }
 

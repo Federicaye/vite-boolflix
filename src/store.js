@@ -18,7 +18,7 @@ export const store = reactive({
     },
     optionsFilter: {
         params: {
-            with_genres: 27,
+            with_genres: 28,
             api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
         }
     },
@@ -26,6 +26,6 @@ export const store = reactive({
     tvShow: [],
     movies: [],
     genre: [],
-    genreId: [28, 12, 80, 27, 53],
+    genreId: [28, 12, 80, 27, 53], /* OGNI NUMERO CORRISPONDE A UN GENERE */
     findMedia: [] /* RICERCA DELL'UTENTE */
 })
