@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <h2>{{ title }}</h2>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3" v-for="(card, index) in list" :key="card.id">
+        <div class="row gap-5">
+            <div class="col-12 col-md-4 col-lg-2 " v-for="(card, index) in list" :key="card.id">
                 <CardComponent :item="card"/>
             </div>
         </div>

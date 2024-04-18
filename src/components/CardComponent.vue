@@ -9,11 +9,11 @@
             <p>{{ item.title || item.name }}</p>
             <p>{{ item.original_title || item.original_name }}</p>
             <p>{{ item.vote_average }}</p>
-            <img :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${item.country}.svg`" alt="">
+            <img :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${item.origin_country}.svg`" alt="">
 
-           <!--  <div class="vote d-flex justify-content-center align-items-center">
+           <div class="vote d-flex justify-content-center align-items-center">
                 <div v-for="n in voteFiveStar"><i class="fa-solid fa-star"></i></div>
-            </div> -->
+            </div> 
         </div>
         </div>
     </div>
@@ -26,11 +26,11 @@ export default {
     props: {
         item: Object
     },
-    /* computed: {
+    computed: {
         voteFiveStar() {
-            return Math.round(this.vote / 2);
+            return Math.round(this.item.vote_average / 2);
         }
-    } */
+    } 
 }
 </script>
 
