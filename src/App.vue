@@ -22,11 +22,13 @@ export default {
     MainComponent
   },
   methods: {
-    getMedia() {
+    /* RICERCA DELL'UTENTE */
+    getMedia() { 
+      if(this.store.options.params.query){
       axios.get(this.store.apiUrl + this.store.endPoint, this.store.options).then((res) => {
-        this.store.tvShow = res.data.results;
+        this.store.findMedia = res.data.results;
         console.log(this.store.tvShow);
-      })
+      })}
     },
     getTv() {
       axios.get(this.store.apiUrl + this.store.endPoints.tv, this.store.options).then((res) => {
@@ -49,11 +51,10 @@ export default {
   },
 
   mounted() {
-    this.getMedia(); 
-    console.log('ciao');
+    
   },
   created() {
-   console.log('ciao')
+   
   }
 }
 

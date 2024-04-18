@@ -25,9 +25,7 @@ export default {
     },
 
     methods: {
-        created() {
-            console.log('hello')
-        }
+       
     }
 }
 </script>

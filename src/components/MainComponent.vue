@@ -1,23 +1,24 @@
 <template>
     <div class="gallery">
-    <div class="cardGallery container">
+        <div class="cardGallery container">
+            <CardList/>
 
-        <div v-for="(item, index) in store.tvShow" :key="index" class="cardMedia">
-            <CardComponent :title="item.original_name" :titleOriginal="item.name" :title2="item.original_title"
-                :titleOriginal2="item.title" :vote="item.vote_average" :country="item.origin_country"
-                :img="`http://image.tmdb.org/t/p/w342/${item.poster_path}`" />
+            <CardList title="risultati della ricerca" :list="store.findMedia" />
+
         </div>
-
     </div>
-</div>
 </template>
 
 <script>
 import CardComponent from './CardComponent.vue';
+import CardList from './CardList.vue';
 import { store } from '../store.js';
 export default {
     name: 'MainComponent',
-    components: { CardComponent },
+    components: {
+        CardComponent,
+        CardList
+    },
     data() {
         return {
             store,
@@ -29,7 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 .cardMedia {
- 
+
     color: white;
     display: flex;
 
@@ -37,13 +38,14 @@ export default {
 
 .cardGallery {
     padding-top: 80px;
-    display: flex;
+    
+
+}
+/* display: flex;
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
-    height: calc(100vh - 50px);
-    
-}
+    height: calc(100vh - 50px); */
 .gallery {
     overflow-y: auto;
 }
