@@ -8,7 +8,7 @@
             <label for="">Tv show</label>
             <input v-model="store.endPoint" type="radio" value="search/multi" name="category" />
             <label for="">All</label>
-            <input type="text" v-model="store.options.params.query">
+            <input type="text" v-model.trim="store.options.params.query">
             <button @click="$emit('findMedia')">search</button>
         </div>
     </header>
