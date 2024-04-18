@@ -27,5 +27,6 @@ export const store = reactive({
     movies: [],
     genre: [],
     genreId: [28, 12, 80, 27, 53], /* OGNI NUMERO CORRISPONDE A UN GENERE */
+    filmByGenre: {}, /* OGEETTO CHE RACCOGLIE GLI ARRAY */
     findMedia: [] /* RICERCA DELL'UTENTE */
 })
