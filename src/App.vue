@@ -47,11 +47,17 @@ export default {
         this.store.allMedia = res.data.results;
         console.log(this.store.allMedia);
       })
+    },
+    getMediaByGenre(){
+      axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, this.store.optionsFilter).then((res) => {
+        this.store.genre = res.data.results;
+        console.log(this.store.allMedia);
+      })
     }
   },
 
   mounted() {
-    
+    this.getMediaByGenre();
   },
   created() {
    

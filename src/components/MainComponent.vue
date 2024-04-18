@@ -1,8 +1,7 @@
 <template>
     <div class="gallery">
         <div class="cardGallery container">
-            <CardList/>
-
+            <cardListOrizontal title="Action" :list="store.genre" />
             <CardList title="risultati della ricerca" :list="store.findMedia" />
 
         </div>
@@ -10,6 +9,7 @@
 </template>
 
 <script>
+import CardListOrizontal from './CardListOrizontal.vue';
 import CardComponent from './CardComponent.vue';
 import CardList from './CardList.vue';
 import { store } from '../store.js';
@@ -17,7 +17,8 @@ export default {
     name: 'MainComponent',
     components: {
         CardComponent,
-        CardList
+        CardList,
+        CardListOrizontal
     },
     data() {
         return {
@@ -38,9 +39,10 @@ export default {
 
 .cardGallery {
     padding-top: 80px;
-    
+
 
 }
+
 /* display: flex;
     justify-content: space-between;
     gap: 10px;

@@ -5,7 +5,9 @@ export const store = reactive({
     endPoints: {
         movie: 'search/movie',
         tv: 'search/tv',
-        all: 'search/multi'
+        all: 'search/multi',
+        discoverMovie: 'discover/movie',
+        discovertv: 'discover/tv'
     },
     options: {
         params: {
@@ -14,9 +16,16 @@ export const store = reactive({
             
         }
     },
+    optionsFilter: {
+        params: {
+            with_genres: 27,
+            api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
+        }
+    },
     endPoint: '',
     tvShow: [],
     movies: [],
-    allMedia: [],
+    genre: [],
+    genreId: [28, 12, 80, 27, 53],
     findMedia: [] /* RICERCA DELL'UTENTE */
 })
