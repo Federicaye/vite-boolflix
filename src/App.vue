@@ -55,11 +55,22 @@ export default {
 
       })
     },
-    getMediaByGenre() {
+   /*  getMediaByGenre() {
       axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, {
         params: {
           api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
           with_genres: 28,
+        }
+      }).then((res) => {
+        this.store.genreAction = res.data.results;
+
+      })
+    }, */
+    getMediaByGenre() {
+      axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, {
+        params: {
+          api_key: '21799a6b0925c3f753aa0f6bbb689d8c',
+          with_genres: store.genreId[0],
         }
       }).then((res) => {
         this.store.genreAction = res.data.results;
