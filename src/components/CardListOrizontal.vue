@@ -27,12 +27,19 @@ export default {
         }
     },
     methods: {
-        scrollRight(offset) {
-            this.$ref.listOrizontal.scrollBy({
+        scrollRight() {
+            this.$refs.listOrizontal.scrollBy({
                 left: 100
                 });
-        }
+        },
+        scrollLeft() {
+            this.$refs.listOrizontal.scrollBy({
+                left: -100
+                });
+        },
+        
     },
+   
 
     components: {
         CardComponent
