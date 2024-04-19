@@ -1,12 +1,12 @@
 <template>
     <div class="gallery">
         <div class="cardGallery container">
-            <cardListOrizontal :title="`risultati per genere ${store.optionsFilter.params.with_genres}`"
+            <cardListOrizontal v-show="store.showresults" :title="`risultati per genere ${store.optionsFilter.params.with_genres}`"
                 :list="store.genre" />
 
-            <CardList :title="`risultati della ricerca per ${store.options.params.query}`" :list="store.findMedia" />
+            <CardList v-show="store.showresults2" :title="`risultati della ricerca per ${store.options.params.query}`" :list="store.findMedia" />
 
-            <cardListOrizontal title="ciao" :list="genreList.data.results"
+            <cardListOrizontal  title="ciao" :list="genreList.data.results"
                 v-for="(genreList, index) in store.genreAction" />
 
         </div>

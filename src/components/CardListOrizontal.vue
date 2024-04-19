@@ -29,12 +29,12 @@ export default {
     methods: {
         scrollRight() {
             this.$refs.listOrizontal.scrollBy({
-                left: 100
+                left: 300
                 });
         },
         scrollLeft() {
             this.$refs.listOrizontal.scrollBy({
-                left: -100
+                left: -300
                 });
         },
         

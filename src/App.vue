@@ -28,6 +28,7 @@ export default {
         axios.get(this.store.apiUrl + this.store.endPoint, this.store.options).then((res) => {
           this.store.findMedia = res.data.results;
           console.log(this.store.tvShow);
+          this.store.showresults2 = true;
         })
       }
     },
@@ -52,6 +53,7 @@ export default {
     getMediaFilteredByGenre() {
       axios.get(this.store.apiUrl + this.store.endPoints.discoverMovie, this.store.optionsFilter).then((res) => {
         this.store.genre = res.data.results;
+        this.store.showresults = true;
 
       })
     },
