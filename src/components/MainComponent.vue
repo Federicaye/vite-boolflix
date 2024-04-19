@@ -1,11 +1,11 @@
 <template>
     <div class="gallery">
         <div class="cardGallery container">
-            <cardListOrizontal :title="store.optionsFilter.params.with_genres" :list="store.genre" />
+            <cardListOrizontal :title="`risultati per genere ${store.optionsFilter.params.with_genres}`" :list="store.genre" />
             
             <CardList :title="`risultati della ricerca per ${store.options.params.query}`" :list="store.findMedia" />
-            <cardListOrizontal title="Action" :list="store.genreAction" />
-            <cardListOrizontal title="Action" :list="store.filmByGenre[1]" />
+           
+           <cardListOrizontal title="Action" :list="genreList.data.results" v-for="(genreList, index) in store.genreAction" />
 
         </div>
     </div>
