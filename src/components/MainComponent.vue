@@ -1,11 +1,13 @@
 <template>
     <div class="gallery">
         <div class="cardGallery container">
-            <cardListOrizontal :title="`risultati per genere ${store.optionsFilter.params.with_genres}`" :list="store.genre" />
-            
+            <cardListOrizontal :title="`risultati per genere ${store.optionsFilter.params.with_genres}`"
+                :list="store.genre" />
+
             <CardList :title="`risultati della ricerca per ${store.options.params.query}`" :list="store.findMedia" />
-           
-           <cardListOrizontal title="Action" :list="genreList.data.results" v-for="(genreList, index) in store.genreAction" />
+
+            <cardListOrizontal title="ciao" :list="genreList.data.results"
+                v-for="(genreList, index) in store.genreAction" />
 
         </div>
     </div>
@@ -27,6 +29,23 @@ export default {
         return {
             store,
 
+        }
+    },
+    computed: {
+        genreName() {
+           return this.store.genreId.map((el) =>{
+                switch (index) {
+        case 0:
+          return 'Action';
+        case 1:
+          return 'Adventure';
+        case 2:
+          return 'Crime';
+        case 3:
+            return 'Horror';
+        case 4:
+            return 'Thriller'}
+            })
         }
     }
 }

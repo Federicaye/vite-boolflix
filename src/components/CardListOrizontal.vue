@@ -27,8 +27,10 @@ export default {
         }
     },
     methods: {
-        scrollRight() {
-            this.listOrizontal.value.scrollBy(100, 0);
+        scrollRight(offset) {
+            this.$ref.listOrizontal.scrollBy({
+                left: 100
+                });
         }
     },
 
