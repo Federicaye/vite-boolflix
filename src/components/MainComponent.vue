@@ -6,7 +6,7 @@
 
             <CardList v-show="store.showresults2" :title="`risultati della ricerca per ${store.options.params.query}`" :list="store.findMedia" />
 
-            <cardListOrizontal  title="ciao" :list="genreList.data.results"
+            <cardListOrizontal  :title="this.genreName[index]" :list="genreList.data.results"
                 v-for="(genreList, index) in store.genreAction" />
 
         </div>
@@ -32,8 +32,15 @@ export default {
         }
     },
     computed: {
-        genreName() {
-           return this.store.genreId.map((el) =>{
+       genreName() {
+         /*  const results = [];
+           this.store.genreId.forEach((el, index) =>{
+               if(el == ) { results.push('Action'); } 
+               else if(el == 80) { results.push('Action');}
+            });
+
+            return results  */
+          return this.store.genreId.map((el, index) =>{
                 switch (index) {
         case 0:
           return 'Action';
@@ -45,8 +52,26 @@ export default {
             return 'Horror';
         case 4:
             return 'Thriller'}
-            })
-        }
+            }) 
+        } 
+       /*  genreName(){
+            return this.store.genreId.map((el, index) =>{
+                switch (el) {
+        case 28:
+          return 'Action';
+        case 12:
+          return 'Adventure';
+        case 80:
+          return 'Crime';
+        case 27:
+            return 'Horror';
+        case 53:
+            return 'Thriller'}
+            }) 
+        } */
+    },
+    mounted(){
+        console.log(this.genreName)
     }
 }
 </script>
